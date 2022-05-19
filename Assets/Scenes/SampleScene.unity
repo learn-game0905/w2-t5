@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1233,14 +1233,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080073094}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 2.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0.08715578, w: 0.9961947}
+  m_LocalPosition: {x: 1.27, y: 5.93, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
 --- !u!1 &1132255637
 GameObject:
   m_ObjectHideFlags: 0
@@ -2168,8 +2168,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866201411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.95, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 867069353}
@@ -2189,46 +2189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d35b011807222c4f8384fe1d1d6dde7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheelRound: {fileID: 8300000, guid: 2af3982eb3013b549be7fd146f7d8526, type: 3}
-  audioSource: {fileID: 1866201415}
-  giftWheel: 2
-  wintext: {fileID: 561741422}
-  section: 9
-  giftName:
-  - "Ph\u1EA7n th\u01B0\u1EDFng: 1 v\xE0ng"
-  - "Ph\u1EA7n th\u01B0\u1EDFng: 2 v\xE0ng"
-  - "Ph\u1EA7n th\u01B0\u1EDFng: 3 tim"
-  - "Ph\u1EA7n th\u01B0\u1EDFng: 4 v\xE0ng"
-  - "Ph\u1EA7n th\u01B0\u1EDFng: 5 tim"
-  - "Ph\u1EA7n th\u01B0\u1EDFng: 6 v\xE0ng"
-  - "Ph\u1EA7n th\u01B0\u1EDFng: 7 tim"
-  - "Ph\u1EA7n th\u01B0\u1EDFng: 8 v\xE0ng"
-  - "Ph\u1EA7n th\u01B0\u1EDFng: 9 v\xE0ng"
-  parrent: {fileID: 867069353}
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!82 &1866201415
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2338,7 +2298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   giftWheel: 5
-  wheelRound: {fileID: 8300000, guid: 2af3982eb3013b549be7fd146f7d8526, type: 3}
+  wheelRound: {fileID: 8300000, guid: e55356a6260c07e46aed481a9f2a17a0, type: 3}
   audioSource: {fileID: 1866201415}
   numberOfGift: 9
   timeRotate: 3

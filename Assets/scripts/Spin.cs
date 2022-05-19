@@ -6,14 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class Spin : MonoBehaviour
 {
-    [SerializeField]
-    private int giftWheel = 9;
+    [SerializeField] private int giftWheel = 9;
 
-    [SerializeField]
-    private AudioClip wheelRound;
+    [SerializeField] private AudioClip wheelRound;
 
-    [SerializeField]
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource;
 
     public int numberOfGift = 9;
     public float timeRotate;
@@ -29,6 +26,7 @@ public class Spin : MonoBehaviour
 
     public AnimationCurve curve;
     private bool isCoroutine;
+
     public void Start()
     {
         isCoroutine = true;
@@ -38,6 +36,7 @@ public class Spin : MonoBehaviour
 
     private IEnumerator RotateWheel()
     {
+        audioSource.Stop();
         isCoroutine = false;
         float startAngel = transform.eulerAngles.z;
         currentTime = 0;
@@ -55,6 +54,7 @@ public class Spin : MonoBehaviour
             float angleCurrent = angleWant * curve.Evaluate(currentTime / timeRotate);
             this.transform.eulerAngles = new Vector3(0, 0, angleCurrent + startAngel);
         }
+
         isCoroutine = true;
 
         switch (giftWheel)
@@ -98,81 +98,87 @@ public class Spin : MonoBehaviour
             case 10:
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 break;
-
         }
     }
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && isCoroutine)
+        // if (Input.GetMouseButton(0) && isCoroutine)
+        // {
+        //     RotateNow();
+        //     audioSource.PlayOneShot(wheelRound);
+        // }
+
+        if (Input.GetKeyDown(KeyCode.R) && isCoroutine)
         {
-            RotateNow();
-            audioSource.PlayOneShot(wheelRound);
+            for (int i = 0; i < parrent.childCount; i++)
+            {
+                parrent.GetChild(i).GetChild(0).GetComponent<TextMeshPro>().color = new Color(255, 255, 255, 255);
+            }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && isCoroutine)
         {
             giftWheel = 1;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+
+        if (Input.GetKeyDown(KeyCode.Alpha2) && isCoroutine)
         {
             giftWheel = 2;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+
+        if (Input.GetKeyDown(KeyCode.Alpha3) && isCoroutine)
         {
             giftWheel = 3;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha4))
+
+        if (Input.GetKeyDown(KeyCode.Alpha4) && isCoroutine)
         {
             giftWheel = 4;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha5))
+
+        if (Input.GetKeyDown(KeyCode.Alpha5) && isCoroutine)
         {
             giftWheel = 5;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha6))
+
+        if (Input.GetKeyDown(KeyCode.Alpha6) && isCoroutine)
         {
             giftWheel = 6;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha7))
+
+        if (Input.GetKeyDown(KeyCode.Alpha7) && isCoroutine)
         {
             giftWheel = 7;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha8))
+
+        if (Input.GetKeyDown(KeyCode.Alpha8) && isCoroutine)
         {
             giftWheel = 8;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
-        
-        if (Input.GetKeyDown(KeyCode.Alpha9))
+
+        if (Input.GetKeyDown(KeyCode.Alpha9) && isCoroutine)
         {
             giftWheel = 9;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
-
     }
 
     void RotateNow()
@@ -184,10 +190,8 @@ public class Spin : MonoBehaviour
     {
         for (int i = 0; i < parrent.childCount; i++)
         {
-            parrent.GetChild(i).eulerAngles = new Vector3(0, 0, - CIRCLE / numberOfGift * i);
+            parrent.GetChild(i).eulerAngles = new Vector3(0, 0, -CIRCLE / numberOfGift * i);
             parrent.GetChild(i).GetChild(0).GetComponent<TextMeshPro>().text = (i + 1).ToString();
         }
     }
-
-
 }
