@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Spin : MonoBehaviour
 {
+     //
     [SerializeField] private int giftWheel = 9;
 
     [SerializeField] private AudioClip wheelRound;
