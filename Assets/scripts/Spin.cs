@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Spin : MonoBehaviour
 {
-     //
     [SerializeField] private int giftWheel = 9;
 
     [SerializeField] private AudioClip wheelRound;
@@ -33,6 +32,11 @@ public class Spin : MonoBehaviour
         isCoroutine = true;
         angleOneGift = CIRCLE / numberOfGift;
         setData();
+        // if (GameObject.Find("Wheel Round"))
+        // {
+        //     Destroy(GameObject.Find("Wheel Round").gameObject);
+        // }
+        // DontDestroyOnLoad(this.gameObject);
     }
 
     private IEnumerator RotateWheel()
@@ -63,38 +67,56 @@ public class Spin : MonoBehaviour
             case 1:
                 colorGift = GameObject.Find("/Wheel Round/List Data/Gilf/Text (TMP)").GetComponent<TextMeshPro>();
                 colorGift.color = new Color(255, 0, 0, 255);
+
+                SceneManager.LoadSceneAsync("Level_1");
                 break;
             case 2:
                 colorGift = GameObject.Find("/Wheel Round/List Data/Gilf1/Text (TMP)").GetComponent<TextMeshPro>();
                 colorGift.color = new Color(255, 0, 0, 255);
+                
+                SceneManager.LoadSceneAsync("Level_2");
                 break;
             case 3:
                 colorGift = GameObject.Find("/Wheel Round/List Data/Gilf2/Text (TMP)").GetComponent<TextMeshPro>();
                 colorGift.color = new Color(255, 0, 0, 255);
+                
+                SceneManager.LoadSceneAsync("Level_3");
                 break;
             case 4:
                 colorGift = GameObject.Find("/Wheel Round/List Data/Gilf3/Text (TMP)").GetComponent<TextMeshPro>();
                 colorGift.color = new Color(255, 0, 0, 255);
+                
+                SceneManager.LoadSceneAsync("Level_4");
                 break;
             case 5:
                 colorGift = GameObject.Find("/Wheel Round/List Data/Gilf4/Text (TMP)").GetComponent<TextMeshPro>();
                 colorGift.color = new Color(255, 0, 0, 255);
+                
+                SceneManager.LoadSceneAsync("Level_5");
                 break;
             case 6:
                 colorGift = GameObject.Find("/Wheel Round/List Data/Gilf5/Text (TMP)").GetComponent<TextMeshPro>();
                 colorGift.color = new Color(255, 0, 0, 255);
+                
+                SceneManager.LoadSceneAsync("Level_6");
                 break;
             case 7:
                 colorGift = GameObject.Find("/Wheel Round/List Data/Gilf6/Text (TMP)").GetComponent<TextMeshPro>();
                 colorGift.color = new Color(255, 0, 0, 255);
+                
+                SceneManager.LoadSceneAsync("Level_7");
                 break;
             case 8:
                 colorGift = GameObject.Find("/Wheel Round/List Data/Gilf7/Text (TMP)").GetComponent<TextMeshPro>();
                 colorGift.color = new Color(255, 0, 0, 255);
+                
+                SceneManager.LoadSceneAsync("Level_8");
                 break;
             case 9:
                 colorGift = GameObject.Find("/Wheel Round/List Data/Gilf8/Text (TMP)").GetComponent<TextMeshPro>();
                 colorGift.color = new Color(255, 0, 0, 255);
+                
+                SceneManager.LoadSceneAsync("Level_9");
                 break;
             case 10:
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -104,11 +126,12 @@ public class Spin : MonoBehaviour
 
     private void Update()
     {
-        // if (Input.GetMouseButton(0) && isCoroutine)
-        // {
-        //     RotateNow();
-        //     audioSource.PlayOneShot(wheelRound);
-        // }
+        if (Input.GetMouseButton(0) && isCoroutine)
+        {
+            RotateNow();
+            audioSource.PlayOneShot(wheelRound);
+            
+        }
 
         if (Input.GetKeyDown(KeyCode.R) && isCoroutine)
         {
@@ -118,63 +141,63 @@ public class Spin : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && isCoroutine)
+        if (Input.GetKeyDown(KeyCode.Keypad1) && isCoroutine)
         {
             giftWheel = 1;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) && isCoroutine)
+        if (Input.GetKeyDown(KeyCode.Keypad2) && isCoroutine)
         {
             giftWheel = 2;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha3) && isCoroutine)
+        if (Input.GetKeyDown(KeyCode.Keypad3) && isCoroutine)
         {
             giftWheel = 3;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha4) && isCoroutine)
+        if (Input.GetKeyDown(KeyCode.Keypad4) && isCoroutine)
         {
             giftWheel = 4;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha5) && isCoroutine)
+        if (Input.GetKeyDown(KeyCode.Keypad5) && isCoroutine)
         {
             giftWheel = 5;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha6) && isCoroutine)
+        if (Input.GetKeyDown(KeyCode.Keypad6) && isCoroutine)
         {
             giftWheel = 6;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha7) && isCoroutine)
+        if (Input.GetKeyDown(KeyCode.Keypad7) && isCoroutine)
         {
             giftWheel = 7;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha8) && isCoroutine)
+        if (Input.GetKeyDown(KeyCode.Keypad8) && isCoroutine)
         {
             giftWheel = 8;
             RotateNow();
             audioSource.PlayOneShot(wheelRound);
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha9) && isCoroutine)
+        if (Input.GetKeyDown(KeyCode.Keypad9) && isCoroutine)
         {
             giftWheel = 9;
             RotateNow();
